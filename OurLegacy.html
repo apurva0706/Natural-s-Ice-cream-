@@ -1,0 +1,654 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Natural IceCream</title>
+  <link rel="icon" href="./assets/logo.jpeg">
+  <!-- custom css  -->
+  <link rel="stylesheet" href="./style.css">
+
+
+
+  <!-- font awesom link  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- bootstrap link  -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+  <style>
+    :root {
+      --cream: #FFF8EC;
+      --paper: #F4ECDA;
+      --espresso: #1F1A14;
+      --mango: #C2410C;
+      --mango-deep: #9A3308;
+      --sitaphal: #7A2E2E;
+      --leaf: #3F5D3A;
+      --tan: #E8DCC8;
+      --tan-line: rgba(31, 26, 20, 0.14);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--espresso);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .wrap {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* ---------- spine ---------- */
+    .spine-track {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: 2px;
+      transform: translateX(-50%);
+      z-index: 0;
+    }
+
+    /* ---------- top mark ---------- */
+    .brandbar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 28px 0 0;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--sitaphal);
+    }
+
+    .brandbar .dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--mango);
+      display: inline-block;
+    }
+
+    /* ---------- hero ---------- */
+    .hero {
+      position: relative;
+      padding: 64px 0 80px;
+      text-align: center;
+    }
+
+    .hero-scoop {
+      width: 300px;
+      height: auto;
+      margin: 0 auto 28px;
+      display: block;
+    }
+
+    .hero h1 {
+      font-family: 'Fraunces', serif;
+      font-weight: 600;
+      font-size: clamp(40px, 7vw, 72px);
+      line-height: 1.04;
+      letter-spacing: -0.01em;
+      color: var(--espresso);
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      font-weight: 500;
+      color: var(--mango-deep);
+    }
+
+    .hero .sub {
+      margin: 22px auto 0;
+      max-width: 520px;
+      font-size: 18px;
+      color: rgba(31, 26, 20, 0.72);
+    }
+
+    .hero .since {
+      margin-top: 34px;
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      letter-spacing: 0.06em;
+      color: var(--sitaphal);
+    }
+
+    .hero .since .line {
+      width: 36px;
+      height: 1px;
+      background: var(--tan-line);
+    }
+
+    /* ---------- section base ---------- */
+    section {
+      position: relative;
+      padding: 70px 0;
+    }
+
+    .section-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--mango-deep);
+      margin-bottom: 18px;
+      display: block;
+    }
+
+    h2.story-head {
+      font-family: 'Fraunces', serif;
+      font-weight: 600;
+      font-size: clamp(28px, 4vw, 38px);
+      line-height: 1.16;
+      max-width: 620px;
+      margin-bottom: 28px;
+    }
+
+    .prose {
+      max-width: 620px;
+    }
+
+    .prose p {
+      font-size: 17px;
+      color: rgba(31, 26, 20, 0.86);
+      margin-bottom: 20px;
+    }
+
+    .prose p:last-child {
+      margin-bottom: 0;
+    }
+
+    .prose .lede {
+      font-size: 19px;
+      color: var(--espresso);
+    }
+
+    .prose .lede::first-letter {
+      font-family: 'Fraunces', serif;
+      font-size: 3.4em;
+      font-weight: 600;
+      color: var(--mango-deep);
+      float: left;
+      line-height: 0.78;
+      padding-right: 10px;
+      padding-top: 4px;
+    }
+
+    /* ---------- divider mark (scoop echo) ---------- */
+    .scoop-divider {
+      display: flex;
+      justify-content: center;
+      margin: 64px 0;
+    }
+
+    .scoop-divider svg {
+      width: 46px;
+      height: 46px;
+    }
+
+    /* ---------- two column story row ---------- */
+    .story-row {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 56px;
+      align-items: start;
+    }
+
+    .story-row.reverse {
+      grid-template-columns: 0.9fr 1.1fr;
+    }
+
+    .story-row.reverse .art-col {
+      order: 2;
+    }
+
+    .story-row.reverse .text-col {
+      order: 1;
+    }
+
+    .art-col {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding-top: 8px;
+    }
+
+    .art-col svg {
+      width: 100%;
+      max-width: 260px;
+      height: auto;
+    }
+
+    /* ---------- pull quote ---------- */
+    .pullquote {
+      max-width: 620px;
+      margin: 56px auto 0;
+      padding: 36px 0 0;
+      border-top: 1px solid var(--tan-line);
+    }
+
+    .pullquote p {
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      font-weight: 500;
+      font-size: clamp(22px, 3vw, 28px);
+      line-height: 1.42;
+      color: var(--sitaphal);
+    }
+
+    .pullquote .attrib {
+      margin-top: 16px;
+      font-family: 'Inter', sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 13px;
+      letter-spacing: 0.04em;
+      color: rgba(31, 26, 20, 0.55);
+      text-transform: uppercase;
+    }
+
+    /* ---------- stat strip ---------- */
+    .stat-strip {
+      background: var(--paper);
+      border-top: 1px solid var(--tan-line);
+      border-bottom: 1px solid var(--tan-line);
+      padding: 54px 0;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 0 18px;
+      position: relative;
+    }
+
+    .stat-item+.stat-item {
+      border-left: 1px solid var(--tan-line);
+    }
+
+    .stat-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 500;
+      font-size: clamp(26px, 3.4vw, 36px);
+      color: var(--mango-deep);
+      letter-spacing: -0.01em;
+    }
+
+    .stat-label {
+      margin-top: 8px;
+      font-size: 13px;
+      color: rgba(31, 26, 20, 0.62);
+      line-height: 1.5;
+    }
+
+    /* ---------- values ---------- */
+    .values-list {
+      max-width: 680px;
+    }
+
+    .value-row {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 32px;
+      padding: 28px 0;
+      border-top: 1px solid var(--tan-line);
+    }
+
+    .value-row:last-child {
+      border-bottom: 1px solid var(--tan-line);
+    }
+
+    .value-name {
+      font-family: 'Fraunces', serif;
+      font-weight: 600;
+      font-size: 21px;
+      color: var(--espresso);
+    }
+
+    .value-desc {
+      font-size: 16px;
+      color: rgba(31, 26, 20, 0.78);
+      max-width: 420px;
+    }
+
+    /* ---------- closing ---------- */
+    .closing {
+      text-align: center;
+      padding: 90px 0 100px;
+    }
+
+    .closing .scoop-small {
+      width: 54px;
+      height: 54px;
+      margin: 0 auto 30px;
+    }
+
+    .closing h3 {
+      font-family: 'Fraunces', serif;
+      font-weight: 600;
+      font-style: italic;
+      font-size: clamp(24px, 3.6vw, 32px);
+      max-width: 560px;
+      margin: 0 auto;
+      color: var(--espresso);
+      line-height: 1.4;
+    }
+
+    .closing .tagline {
+      margin-top: 26px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--sitaphal);
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 0 50px;
+      font-size: 12px;
+      color: rgba(31, 26, 20, 0.45);
+    }
+
+    /* ---------- responsive ---------- */
+    @media (max-width:760px) {
+      .wrap {
+        padding: 0 22px;
+      }
+
+      .story-row,
+      .story-row.reverse {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .story-row.reverse .art-col,
+      .story-row.reverse .text-col {
+        order: initial;
+      }
+
+      .art-col {
+        padding-top: 0;
+      }
+
+      .art-col svg {
+        max-width: 200px;
+      }
+
+      .stat-grid {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 30px;
+      }
+
+      .stat-item:nth-child(3) {
+        border-left: 1px solid var(--tan-line);
+      }
+
+      .stat-item:nth-child(2n+1) {
+        border-left: none;
+      }
+
+      .value-row {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+    }
+
+    /* ---------- reduced motion / focus ---------- */
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid var(--mango);
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="customTopNav">
+    <sup>*</sup>This is only a brand name and does not represent its true nature.
+  </div>
+
+  <div class="container d-flex justify-content-around align-items-center">
+    <div>
+      <a href="#">
+        <img src="./naturals_logo.png" width="200" height="100" alt="">
+      </a>
+
+      <button class="customGreenBTN"
+        style="padding:12px 25px; font-size:15px; border-radius:6px; margin-left: 20px;">Order Now</button>
+    </div>
+    <div>
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="I am looking for ..." aria-label="Recipient’s username"
+          aria-describedby="basic-addon2">
+        <span class="input-group-text" id="basic-addon2">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <nav class="customNav d-flex justify-content-center">
+    <div class="customNavItem">
+      <a href="./index.html" class="customNavLink">Tree to Treat</a>
+    </div>
+    <div class="customNavItem">
+      <a href="./Ourlegacy.html" class="customNavLink">Our Legacy</a>
+    </div>
+    <div class="customNavItem">
+
+      <a href="./Products.html" class="customNavLink">Products</a>
+    </div>
+    <div class="customNavItem">
+      <a href="./MalaiMagic.html" class="customNavLink">Malai Magic</a>
+    </div>
+    <div class="customNavItem">
+      <a href="./FranchiseQueries.html" class="customNavLink">Franchies queries</a>
+    </div>
+    <div class="customNavItem">
+      <a href="./StoreLocator.html" class="customNavLink"> Store Locator</a>
+    </div>
+    </ul>
+  </nav>
+
+
+  <a href="./index.html">
+    <img src="./Strawberry-1600-X-674-new.jpg" alt="">
+  </a>
+
+
+
+  <title>Our Legacy — Naturals Ice Cream</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+
+
+
+  <div class="wrap">
+
+    <div class="page-header">
+      
+      <h1>Taste the original.</h1>
+      <p class="intro">The story of how a fruit vendor's son built Naturals Ice Cream — one real, whole fruit at a time.
+      </p>
+    </div>
+
+    <div class="layout">
+
+      <div class="main-col">
+
+        <p>Raghunandan Kamath grew up near Mangaluru, helping his father sell mangoes. He learned to tell a ripe fruit
+          from a stubborn one just by feel, long before he had any idea it would shape his life.</p>
+
+        <p>Years later, working in his brother's eatery in Bombay, he kept asking himself one question: ice cream
+          already came in fruit flavours, so why did almost none of it use real fruit? That question became Naturals.
+        </p>
+
+        <blockquote>
+          "If I want to sell ice cream, I should invest in trees."
+          <cite>Late Shri Raghunandan Kamath, founder, Naturals Ice Cream</cite>
+        </blockquote>
+
+        <h2>How it started</h2>
+        <p>In 1984, Kamath opened a small shop in Juhu Scheme, Mumbai. Unsure if people would come just for ice cream,
+          he sold pav bhaji as the main dish and ice cream on the side — twelve flavours to start. Within a year, the
+          ice cream didn't need the pav bhaji anymore. People were lining up for it on its own.</p>
+
+        <h2>Still the same today</h2>
+        <p>That's it. Three ingredients, the same ones since day one. No shortcuts, no artificial flavours, no added
+          colour — just fruit, the way Kamath always insisted it should be.</p>
+
+      </div>
+
+      <div class="side-rail">
+        <div class="side-label">What hasn't changed</div>
+        <ul>
+          <li><strong>Milk</strong>From the same vendor for over 40 years.</li>
+          <li><strong>Fruit</strong>Real, fresh, sourced from each fruit's best-known region.</li>
+          <li><strong>Sugar</strong>Pharma-grade, pure enough to use in medicine.</li>
+        </ul>
+        <div class="tagline">Naturals Ice Cream — Taste the Original</div>
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+
+
+  <footer>
+    <div class="container-fluid customFooter">
+      <div class="row">
+        <div class="col">
+          <h5>
+            CONTACT US
+          </h5>
+          <address>
+
+            Plot 55 ABCD & 56 D, Kandivali Industrial Estate, Charkop, Kandivali (W), Mumbai – 400 067.
+            <br>
+            <i class="fa-solid fa-envelope"></i> customercare@naturalicecreams.in
+            <br>
+
+            <i class="fa-solid fa-headset"></i>8080801984
+          </address>
+        </div>
+        <div class="col verticalLine">
+          <h5>ABOUT NATURALS
+          </h5>
+          <a href="" class="customNavLink">Tree To Treat</a>
+          <br>
+          <a href="" class="customNavLink">Our Legacy
+            <br>
+          </a>
+          <a href="" class="customNavLink">Franchise Queries</a>
+          <h5>FRANCHISE QUERIES</h5>
+          <a href="" class="customNavLink">Become a Business Partner</a>
+          <br>
+          <a href="" class="customNavLink">Franchise FAQ
+          </a>
+
+        </div>
+        <div class="col verticalLine">
+          <br>
+          <h5>ABOUT NATURALS
+          </h5>
+          <a href="" class="customNavLink">Tree To Treat</a>
+          <br>
+          <a href="" class="customNavLink">Our Legacy
+            <br>
+          </a>
+          <a href="" class="customNavLink">Franchise Queries</a>
+        </div>
+        <div class="col verticalLine">
+          <h5>ABOUT NATURALS
+          </h5>
+          <a href="" class="customNavLink">Tree To Treat</a>
+          <br>
+          <a href="" class="customNavLink">Our Legacy
+            <br>
+          </a>
+          <a href="" class="customNavLink">Franchise Queries</a>
+        </div>
+      </div>
+
+
+      <div class="container d-flex justify-content-center">
+        <div class="socialIcons">
+          <a href="#" class="socialIcon">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+        </div>
+        <div class="socialIcons">
+          <a href="#" class="socialIcon">
+            <i class="fa-brands fa-instagram"></i> </a>
+        </div>
+        <div class="socialIcons">
+          <a href="#" class="socialIcon">
+
+            <i class="fa-brands fa-facebook"></i> </a>
+        </div>
+        <div class="socialIcons">
+          <a href="#" class="socialIcon">
+
+            <i class="fa-brands fa-youtube"></i> </a>
+        </div>
+        <div class="socialIcons">
+          <a href="#" class="socialIcon">
+            <i class="fa-brands fa-linkedin"></i> </a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

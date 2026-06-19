@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Natural IceCream</title>
+    <link rel="icon" href="./assets/logo.jpeg">
+    <!-- custom css  -->
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./index.css">
+
+    <!-- font awesom link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- bootstrap link  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #fff8f2;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+            color: white;
+            text-align: center;
+            padding: 70px 20px;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            font-weight: bold;
+        }
+
+        .products {
+            padding: 60px 0;
+        }
+
+        .card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, .15);
+            transition: .3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        .card img {
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .card-title {
+            color: #4ab86f;
+            font-weight: bold;
+        }
+
+        .btn-custom {
+            background: #4ab86f;
+            color: white;
+        }
+
+        .btn-custom:hover {
+            background: #4ab86f;
+            color: white;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="customTopNav">
+        <sup>*</sup>This is only a brand name and does not represent its true nature.
+    </div>
+    <div class="container d-flex justify-content-around align-items-center">
+        <div>
+            <a href="#">
+                <img src="./naturals_logo.png" width="200" height="100" alt="">
+            </a>
+
+            <button class="customGreenBTN"
+                style="padding:12px 25px; font-size:15px; border-radius:6px; margin-left: 20px;">Order Now</button>
+        </div>
+        <div>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="I am looking for ..."
+                    aria-label="Recipient’s username" aria-describedby="basic-addon2">
+                <span class="input-group-text" id="basic-addon2">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </span>
+            </div>
+        </div>
+    </div>
+
+
+    <nav class="customNav d-flex justify-content-center">
+        <div class="customNavItem">
+            <a href="./index.html" class="customNavLink">Tree to Treat</a>
+        </div>
+        <div class="customNavItem">
+            <a href="./OurLegacy.html" class="customNavLink">Our Legacy</a>
+        </div>
+        <div class="customNavItem">
+
+            <a href="./Products.html" class="customNavLink">Products</a>
+        </div>
+        <div class="customNavItem">
+            <a href="./MalaiMagic.html" class="customNavLink">Malai Magic</a>
+        </div>
+        <div class="customNavItem">
+            <a href="./FranchiseQueries.html" class="customNavLink">Franchies queries</a>
+        </div>
+        <div class="customNavItem">
+            <a href="./StoreLocator.html" class="customNavLink"> Store Locator</a>
+        </div>
+        </ul>
+    </nav>
+
+
+    <title>Our Flavours | Naturals Ice Cream</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Hero -->
+    <section class="hero">
+        <h1>Our Flavours</h1>
+        <p>Fresh Fruits • Fresh Milk • Fresh Happiness</p>
+    </section>
+
+    <!-- Products -->
+    <section class="products">
+
+        <div class="container">
+
+            <div class="row g-4">
+
+                <!-- Mango -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card">
+                        <img src="https://placehold.co/300x220/F4A460/FFFFFF?text=Mango" class="card-img-top">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Mango</h5>
+                            <p>Sweet Alphonso mango flavour.</p>
+                            <a href="#" class="btn btn-custom">View</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Strawberry -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card">
+                        <img src="https://placehold.co/300x220/FF4D6D/FFFFFF?text=Strawberry" class="card-img-top">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Strawberry</h5>
+                            <p>Fresh strawberry delight.</p>
+                            <a href="#" class="btn btn-custom">View</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chocolate -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card">
+                        <img src="https://placehold.co/300x220/5C4033/FFFFFF?text=Chocolate" class="card-img-top">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Chocolate</h5>
+                            <p>Rich chocolate goodness.</p>
+                            <a href="#" class="btn btn-custom">View</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sitaphal -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card">
+                        <img src="https://placehold.co/300x220/C6D57E/000000?text=Sitaphal" class="card-img-top">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Sitaphal</h5>
+                            <p>Creamy custard apple flavour.</p>
+                            <a href="#" class="btn btn-custom">View</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tender Coconut -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card">
+                        <img src="https://placehold.co/300x220/DFF6DD/000000?text=Coconut" class="card-img-top">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Tender Coconut</h5>
+                            <p>Natural coconut flavour.</p>
+                            <a href="#" class="btn btn-custom">View</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Black Grapes -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card">
+                        <img src="https://placehold.co/300x220/6A0DAD/FFFFFF?text=Black+Grapes" class="card-img-top">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Black Grapes</h5>
+                            <p>Fresh black grapes.</p>
+                            <a href="#" class="btn btn-custom">View</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lychee -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card">
+                        <img src="https://placehold.co/300x220/F5F5F5/000000?text=Lychee" class="card-img-top">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Lychee</h5>
+                            <p>Refreshing tropical flavour.</p>
+                            <a href="#" class="btn btn-custom">View</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coffee Walnut -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card">
+                        <img src="https://placehold.co/300x220/8B5A2B/FFFFFF?text=Coffee+Walnut" class="card-img-top">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Coffee Walnut</h5>
+                            <p>Coffee with crunchy walnuts.</p>
+                            <a href="#" class="btn btn-custom">View</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Anjeer -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card">
+                        <img src="https://placehold.co/300x220/A0522D/FFFFFF?text=Anjeer" class="card-img-top">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Anjeer</h5>
+                            <p>Delicious fig flavour.</p>
+                            <a href="#" class="btn btn-custom">View</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kesar Pista -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card">
+                        <img src="https://placehold.co/300x220/F4E04D/000000?text=Kesar+Pista" class="card-img-top">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Kesar Pista</h5>
+                            <p>Royal saffron & pista.</p>
+                            <a href="#" class="btn btn-custom">View</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Malai -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card">
+                        <img src="https://placehold.co/300x220/F8F4E3/000000?text=Malai" class="card-img-top">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Malai</h5>
+                            <p>Traditional creamy flavour.</p>
+                            <a href="#" class="btn btn-custom">View</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Roasted Almond -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card">
+                        <img src="https://placehold.co/300x220/C19A6B/FFFFFF?text=Roasted+Almond" class="card-img-top">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Roasted Almond</h5>
+                            <p>Creamy ice cream with almonds.</p>
+                            <a href="#" class="btn btn-custom">View</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+
+
+    <br><br>
+
+    <footer>
+        <div class="container-fluid customFooter">
+            <div class="row">
+                <div class="col">
+                    <h5>
+                        CONTACT US
+                    </h5>
+                    <address>
+
+                        Plot 55 ABCD & 56 D, Kandivali Industrial Estate, Charkop, Kandivali (W), Mumbai – 400 067.
+                        <br>
+                        <i class="fa-solid fa-envelope"></i> customercare@naturalicecreams.in
+                        <br>
+
+                        <i class="fa-solid fa-headset"></i>8080801984
+                    </address>
+                </div>
+                <div class="col verticalLine">
+                    <h5>ABOUT NATURALS
+                    </h5>
+                    <a href="" class="customNavLink">Tree To Treat</a>
+                    <br>
+                    <a href="" class="customNavLink">Our Legacy
+                        <br>
+                    </a>
+                    <a href="" class="customNavLink">Franchise Queries</a>
+                    <h5>FRANCHISE QUERIES</h5>
+                    <a href="" class="customNavLink">Become a Business Partner</a>
+                    <br>
+                    <a href="" class="customNavLink">Franchise FAQ
+                    </a>
+
+                </div>
+                <div class="col verticalLine">
+                    <br>
+                    <h5>ABOUT NATURALS
+                    </h5>
+                    <a href="" class="customNavLink">Tree To Treat</a>
+                    <br>
+                    <a href="" class="customNavLink">Our Legacy
+                        <br>
+                    </a>
+                    <a href="" class="customNavLink">Franchise Queries</a>
+                </div>
+                <div class="col verticalLine">
+                    <h5>ABOUT NATURALS
+                    </h5>
+                    <a href="" class="customNavLink">Tree To Treat</a>
+                    <br>
+                    <a href="" class="customNavLink">Our Legacy</a>
+                    <br>
+                    </a>
+                    <a href="" class="customNavLink">Franchise Queries</a>
+                </div>
+            </div>
+
+
+            <div class="container d-flex justify-content-center">
+                <div class="socialIcons">
+                    <a href="#" class="socialIcon">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                </div>
+                <div class="socialIcons">
+                    <a href="#" class="socialIcon">
+                        <i class="fa-brands fa-instagram"></i> </a>
+                </div>
+                <div class="socialIcons">
+                    <a href="#" class="socialIcon">
+
+                        <i class="fa-brands fa-facebook"></i> </a>
+                </div>
+                <div class="socialIcons">
+                    <a href="#" class="socialIcon">
+
+                        <i class="fa-brands fa-youtube"></i> </a>
+                </div>
+                <div class="socialIcons">
+                    <a href="#" class="socialIcon">
+                        <i class="fa-brands fa-linkedin"></i> </a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
